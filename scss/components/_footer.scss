@@ -1,0 +1,50 @@
+.footer {
+    &-black {
+        background-color: #242322;
+        color: white;
+        &-top {
+            text-align: center;
+            padding: 30px 5px 60px 5px;
+        }
+        &-bot {
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-bottom: 60px;
+            justify-content: space-between;
+            &-email {
+                display: flex;
+                i {
+                    margin-right: 7px;
+                }
+            }
+            &-tlf {
+                display: flex;
+                i {
+                    margin-right: 7px;
+                }
+            }
+            &-adress {
+                display: flex;
+                i {
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+    &-white {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-left {
+            &-title {
+                padding-bottom: 10px;
+            }
+        }
+        &-right {
+            width: 200px;
+        }
+    }
+}

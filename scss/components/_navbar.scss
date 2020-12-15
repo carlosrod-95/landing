@@ -1,0 +1,26 @@
+.header-landing {
+    width: 100%;
+    padding: 10px 15px 10px 15px;
+    background-color: #242322;
+    &-container {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: space-between;
+        &-title {
+            text-align: left;
+            color: white;
+        }
+        &-icon {
+            display: flex;
+            text-align: right;
+            color: white;
+            justify-content: flex-end;
+            align-items: center;
+            p {
+                margin-right: 10px;
+            }
+        }
+    }
+}

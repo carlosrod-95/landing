@@ -1,8 +1,20 @@
     .select {
-        background: #FCFCFC;
+        background: color(primary);
         margin-bottom: 100px;
+        @include responsive(xxs) {
+            margin-bottom: 20px;
+        }
         &-top {
             padding: 20px 10px 50px 10px;
+            @include responsive(lg) {
+                padding: 20px 40px 50px 40px;
+            }
+            @include responsive(md) {
+                padding: 20px 60px 50px 60px;
+            }
+            @include responsive(xxs) {
+                padding: 20px 60px 30px 60px;
+            }
             &-container {
                 max-width: 1000px;
                 margin: 0 auto;
@@ -10,32 +22,47 @@
                 &-title {
                     font-size: 50px;
                     padding-bottom: 10px;
+                    @include responsive(sm) {
+                        font-size: 40px;
+                    }
+                    @include responsive(xxs) {
+                        font-size: 30px
+                    }
                 }
                 &-text {
                     max-width: 600px;
-                    font-size: 15px;
                     padding-bottom: 10px;
                 }
                 &-image {
                     position: absolute;
                     top: 50px;
-                    right: 150px;
+                    right: 100px;
                     width: 200px;
                     z-index: 1;
+                    @include responsive(lg) {
+                        display: none;
+                    }
                 }
             }
         }
         &-bot {
-            background: rgb(255, 255, 255);
-            background: repeating-linear-gradient(120deg, rgba(255, 255, 255, 1) 0%, #F0EAE5 2%);
+            background: color(primary);
+            background: repeating-linear-gradient(120deg, color(primary) 0%, color(secondary) 2%);
             padding: 20px 10px 50px 10px;
             position: relative;
             margin-bottom: 200px;
+            @include responsive(sm) {
+                margin-bottom: 400px;
+            }
             &-text {
                 max-width: 500px;
                 margin: 0 auto;
                 padding-bottom: 80px;
                 font-size: 40px;
+                text-align: center;
+                @include responsive(xxs) {
+                    font-size: 30px;
+                }
             }
             &-payment {
                 max-width: 700px;
@@ -48,18 +75,29 @@
                 text-align: center;
                 justify-content: space-between;
                 top: 150px;
+                @include responsive(sm) {
+                    flex-direction: column;
+                    max-width: 200px;
+                    top: 100px
+                }
+                @include responsive(xxs) {
+                    top: 80px
+                }
                 &-box {
                     background-color: white;
                     padding: 30px;
                     border-radius: 5px;
-                    box-shadow: 5px 5px 7px #242322;
+                    box-shadow: 5px 5px 7px color(tertiary);
+                    @include responsive(sm) {
+                        margin-top: 10px;
+                    }
                     h4 {
                         padding-bottom: 10px;
                         font-size: 20px;
-                        border-bottom: 1px #242322 dotted;
+                        border-bottom: 1px color(tertiary) dotted;
                     }
                     &-button {
-                        background-color: #242322;
+                        background-color: color(tertiary);
                         color: white;
                         border: none;
                         padding: 8px 5px;
@@ -71,78 +109,65 @@
             }
         }
         &-reasons {
-            display: flex;
-            max-width: 900px;
-            margin: 0 auto;
-            border-bottom: 1px #242322 dotted;
-            padding-bottom: 35px;
+            @include subscribeText;
             &-title {
                 min-width: 200px;
                 font-size: 30px;
                 margin-right: 20px;
+                @include responsive(sm) {
+                    font-size: 25px;
+                }
             }
             &-text {
                 text-align: justify;
+                @include responsive(xs) {
+                    padding-top: 10px
+                }
             }
         }
         &-advantages {
-            display: flex;
-            max-width: 900px;
-            margin: 0 auto;
-            border-bottom: 1px #242322 dotted;
+            @include subscribeText;
             margin-top: 10px;
-            padding-bottom: 35px;
             &-title {
                 min-width: 200px;
                 font-size: 30px;
                 margin-right: 20px;
+                @include responsive(sm) {
+                    font-size: 25px;
+                }
             }
             &-text {
                 text-align: justify;
+                @include responsive(xs) {
+                    padding-top: 10px
+                }
                 &-one {
-                    margin-top: 25px;
-                    display: flex;
-                    border-bottom: 1px #242322 dotted;
-                    padding-bottom: 10px;
-                    &-title {
-                        margin-right: 10px;
-                        font-weight: bold;
-                    }
+                    @include advantagesText;
                 }
                 &-two {
-                    margin-top: 25px;
-                    display: flex;
-                    border-bottom: 1px #242322 dotted;
-                    padding-bottom: 10px;
-                    &-title {
-                        margin-right: 10px;
-                        font-weight: bold;
-                    }
+                    @include advantagesText;
                 }
                 &-three {
-                    margin-top: 25px;
-                    display: flex;
-                    padding-bottom: 10px;
-                    &-title {
-                        margin-right: 10px;
-                        font-weight: bold;
-                    }
+                    @include advantagesText($border-bottom: none);
                 }
             }
         }
         &-explain {
-            display: flex;
-            max-width: 900px;
-            margin: 0 auto;
+            @include subscribeText($border-bottom: none);
             margin-top: 10px;
-            padding-bottom: 10px;
             &-title {
                 min-width: 200px;
                 font-size: 30px;
                 margin-right: 20px;
+                @include responsive(sm) {
+                    font-size: 25px;
+                }
             }
             &-text {
                 text-align: justify;
+                @include responsive(xs) {
+                    padding-top: 10px
+                }
             }
         }
     }

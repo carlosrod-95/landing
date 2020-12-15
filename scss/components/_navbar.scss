@@ -1,21 +1,27 @@
 .header-landing {
     width: 100%;
     padding: 10px 15px 10px 15px;
-    background-color: #242322;
+    background-color: color(tertiary);
     &-container {
         display: flex;
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
         justify-content: space-between;
+        @include responsive(lg) {
+            max-width: 900px;
+        }
+        @include responsive(md) {
+            max-width: 800px;
+        }
         &-title {
             text-align: left;
-            color: white;
+            color: color(primary);
         }
         &-icon {
             display: flex;
             text-align: right;
-            color: white;
+            color: color(primary);
             justify-content: flex-end;
             align-items: center;
             p {

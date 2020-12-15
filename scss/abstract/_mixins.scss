@@ -1,0 +1,61 @@
+            @mixin subscribeText($border-bottom: 1px #242322 dotted) {
+                display: flex;
+                max-width: 900px;
+                margin: 0 auto;
+                border-bottom: $border-bottom;
+                padding-bottom: 35px;
+                @include responsive(md) {
+                    max-width: 700px;
+                }
+                @include responsive(xs) {
+                    max-width: 500px;
+                    flex-direction: column;
+                }
+                @include responsive(xxs) {
+                    max-width: 300px;
+                }
+            }
+            
+            @mixin advantagesText($border-bottom: 1px #242322 dotted) {
+                margin-top: 25px;
+                display: flex;
+                border-bottom: $border-bottom;
+                padding-bottom: 10px;
+                &-title {
+                    margin-right: 10px;
+                    font-weight: bold;
+                }
+            }
+            
+            @mixin responsive($breakpoint) {
+                @if($breakpoint==xl) {
+                    @media(max-width: 1250px) {
+                        @content;
+                    }
+                }
+                @if($breakpoint==lg) {
+                    @media(max-width: 1040px) {
+                        @content;
+                    }
+                }
+                @if($breakpoint==md) {
+                    @media(max-width: 940px) {
+                        @content;
+                    }
+                }
+                @if($breakpoint==sm) {
+                    @media(max-width: 750px) {
+                        @content;
+                    }
+                }
+                @if($breakpoint==xs) {
+                    @media(max-width: 630px) {
+                        @content;
+                    }
+                }
+                @if($breakpoint==xxs) {
+                    @media(max-width: 540px) {
+                        @content;
+                    }
+                }
+            }

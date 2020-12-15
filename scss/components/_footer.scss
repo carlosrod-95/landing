@@ -1,10 +1,17 @@
 .footer {
     &-black {
-        background-color: #242322;
-        color: white;
+        background-color: color(tertiary);
+        color: color(primary);
         &-top {
             text-align: center;
             padding: 30px 5px 60px 5px;
+            @include responsive(xs) {
+                text-align: left;
+                margin-left: 10px;
+            }
+            @include responsive(xxs) {
+                padding-bottom: 30px;
+            }
         }
         &-bot {
             display: flex;
@@ -12,20 +19,43 @@
             margin: 0 auto;
             padding-bottom: 60px;
             justify-content: space-between;
+            @include responsive(lg) {
+                max-width: 900px;
+            }
+            @include responsive(md) {
+                max-width: 700px;
+            }
+            @include responsive(xs) {
+                flex-direction: column;
+            }
+            @include responsive(xxs) {
+                padding-bottom: 40px;
+            }
             &-email {
                 display: flex;
+                @include responsive(xs) {
+                    margin-bottom: 30px;
+                    margin-left: 10px;
+                }
                 i {
                     margin-right: 7px;
                 }
             }
             &-tlf {
                 display: flex;
+                @include responsive(xs) {
+                    margin-bottom: 30px;
+                    margin-left: 10px;
+                }
                 i {
                     margin-right: 7px;
                 }
             }
             &-adress {
                 display: flex;
+                @include responsive(xs) {
+                    margin-left: 10px;
+                }
                 i {
                     margin-right: 7px;
                 }
@@ -33,11 +63,23 @@
         }
     }
     &-white {
+        background-color: color(primary);
         max-width: 1200px;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @include responsive(xl) {
+            max-width: 900px;
+        }
+        @include responsive(md) {
+            max-width: 700px;
+        }
+        @include responsive(xxs) {
+            margin: 20px 0px;
+            text-align: center;
+            justify-content: center;
+        }
         &-left {
             &-title {
                 padding-bottom: 10px;
@@ -45,6 +87,9 @@
         }
         &-right {
             width: 200px;
+            @include responsive(xxs) {
+                display: none;
+            }
         }
     }
 }

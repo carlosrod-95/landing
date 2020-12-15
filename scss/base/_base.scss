@@ -3,4 +3,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    @include responsive(sm) {
+        p {
+            font-size: 15px;
+        }
+    }
+    @include responsive(xxs) {
+        p {
+            font-size: 13px;
+        }
+    }
 }
